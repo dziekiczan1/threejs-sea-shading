@@ -18,15 +18,17 @@ const canvas = document.querySelector('canvas.webgl');
 const scene = new THREE.Scene();
 
 // Axes helper
-const axesHelper = new THREE.AxesHelper();
-axesHelper.position.y += 0.25;
-scene.add(axesHelper);
+// const axesHelper = new THREE.AxesHelper();
+// axesHelper.position.y += 0.25;
+// scene.add(axesHelper);
 
 /**
  * Water
  */
 // Geometry
 const waterGeometry = new THREE.PlaneGeometry(2, 2, 512, 512);
+waterGeometry.deleteAttribute('normal');
+waterGeometry.deleteAttribute('uv');
 
 // Colors
 debugObject.depthColor = '#ff4000';
